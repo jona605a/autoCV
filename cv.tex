@@ -1,226 +1,311 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
 %
-%	Copyright (c) 2021 Jitin Nair
+% This template originates from:
+% http://www.LaTeXTemplates.com
 %
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
 %
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{graphicx}
+% \usepackage{wrapfig}
+\usepackage[export]{adjustbox}
 
 %----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
-\usepackage{url}
-\usepackage{parskip} 	
-
-%other packages for formatting
-\RequirePackage{color}
-\RequirePackage{graphicx}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-
-%tabularx environment
-\usepackage{tabularx}
-
-%for lists within experience section
-\usepackage{enumitem}
-
-% centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
-\usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
-
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
 
-% non-numbered pages
-\pagestyle{empty} 
 
 %----------------------------------------------------------------------------------------
-%	TITLE
+%	TITLE AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Jonathan Schmidt Højlev} \\[7.5pt]
-\href{https://github.com/jona605a}{\raisebox{-0.05\height}\faGithub\ jona605a} \ $|$ \ 
-\href{https://linkedin.com/in/jonathan-højlev-215730170}{\raisebox{-0.05\height}\faLinkedin\ Jonathan Højlev} \ $|$ \ 
-% \href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:jonathan.hoejlev@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ jonathan.hoejlev@gmail.com} \ $|$ \ 
-\href{tel:+004531401720}{\raisebox{-0.05\height}\faMobile \ +45 31 40 17 20} \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
-\section{Generelt}
-Jeg er en nysgerrig, hårdtarbejdende, og kreativ person, der holder af at arbejde med min faglighed og dele den med mennesker omkring mig. Jeg er ambitiøs og har arbejdet meget i min skoletid for at lære så meget som muligt om mit fagområde. Mennesker og sociale relationer er vigtige for mig, hvorfor jeg brænder for undervisning og har arbejdet frivilligt for at skabe et bedre studiemiljø på mit universitet. 
-
-%Experience
-\section{Arbejde}
-
-\begin{jobshort}{Hjælpelærer på DTU}{Sep 2020 - Dec 2024}
-På DTU har jeg været hjælpelærer siden jeg færdiggjorde mit første år. Jeg holder utroligt meget af at undervise og mine elever sætter også stor pris på mig. I 2021 vandt jeg "Årets Hjælpelærer" på DTU. 
-\begin{minipage}[t]{\linewidth}\vspace{-3pt}
-\begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    \item Matematik 1, 2020, 2021, 2022, 2023, 2024
-    \item Algoritmer og Datastrukturer 1, 2022
-    \item Algoritmer og Datastrukturer 2, 2024
-    \item Indledende programmering, 2023
-    \item Computer Programming, 2024
-\end{itemize}
+\begin{minipage}[t]{0.45\textwidth} % 45% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% If your name is very short, use just one of the lines below
+	% If your name is very long, reduce the font size or make the minipage wider and reduce the others proportionately
+	\colorbox{black}{{\huge\textcolor{white}{\textbf{\MakeUppercase{Jonathan S. Højlev}}}}} % First name
+	
+	
+% 	\colorbox{black}{{\huge\textcolor{white}{\textbf{\MakeUppercase{Vistisen}}}}} % Last name
+	
+% 	\vspace{3pt}
+	
+% 	{\huge Web App Architect} % Career or current job title
 \end{minipage}
-\end{jobshort}
+\begin{minipage}[t]{0.3\textwidth} % 27.5% of the page width for the first row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+	\icon{MapMarker}{12}{København Ø}\\
+	\icon{Phone}{12}{+45 3140 1720}\\
+	\icon{At}{12}{\href{mailto:jonathan.hoejlev@gmail.com}{jonathan.hoejlev@gmail.com}}\\
 
+\end{minipage}
+\begin{minipage}[t]{0.275\textwidth} % 27.5% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
+	% Other icons can be found by referring to fontawesome.pdf (supplied with the template) and using the word after \fa in the command for the icon you want
+% 	\icon{Globe}{12}{\href{https://alyx.vance.me}{alyx.vance.me}}\\
+	\icon{Github}{12}{\href{https://github.com/jona605a}{github.com/jona605a}}\\
+	\icon{Linkedin}{12}{\href{www.linkedin.com/in/jonathan-højlev-215730170}{Jonathan Højlev}}\\
+\end{minipage}
 
-\begin{jobshort}{Udstillingspilot på Experimentarium}{Dec 2018 - Dec 2021}
-På Experimentarium stod jeg for gæsteservice og den direkte kontakt med gæsterne. Det bestod primært af formidling af naturvidenskab indenfor alle tænkelige områder til børn og familier. Jeg har fået erfaring indenfor formidling, præsentation, gæsteservice, samt førstehjælp og krisehåndtering. 
-\end{jobshort}
-  
-%Projects
-% \section{Projects}
+\vspace{0.5cm}
 
-% \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-% \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-% \end{tabularx}
-
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%
+% \cvsect{Who Am I?}
+%%%%%%%%%%%%%%%%
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-\section{Uddannelse}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2024 - nu & MSc. Informationsteknologi ved \textbf{DTU} \hfill \normalsize (Gennemsnit: 11.4/12) \\
 
-2021 - 2023 & BSc. Softwareteknologi ved \textbf{DTU} \hfill (Gennemsnit: 11.6/12) \\ 
+% \cvsect{Who am I?}
+% \begin{minipage}[t]{.7\textwidth}
+I am a passionate learner with a curiosity for all things natural sciences. 
+%I can never refuse a good puzzle or an opportunity to learn something new about the world, which sometimes leads me astray but also enables me to keep on learning new things. 
+In my studies I have found a passion for mathematics and theoretical computer science, lately focusing on graph theory and algorithmics.
+I have extensive experience in teaching and science communication and enjoy working in collaborative research environments.
+%, and some of my fondest memories at university have been of seeing a moment where I helped something `click' for my fellow students. 
 
-2019 - 2021 & BSc. Kvantitativ Biologi og Sygdoms modellering ved \textbf{DTU} \hfill  (Gennemsnit: 10.8/12) \\
-\end{tabularx}\vspace{5pt}
-I 2021 skiftede jeg uddannelse fra Kvantitativ Biologi til Softwareteknologi. Selvom jeg ikke færdiggjorde førstnævnte, har den givet min profil en bredere polyteknisk baggrund med et biologisk fokus. 
+% I am a Master's student in Computer Science and Engineering at DTU with a strong focus on algorithms, graph theory, and discrete mathematics. I enjoy working at the intersection of theory and practice, particularly on problems involving structural graph parameters. Alongside my studies, I am deeply engaged in teaching and science communication, and I thrive in collaborative research environments.
+
+% \end{minipage}
+% \begin{minipage}[t]{.3\textwidth}
+% 	\vspace{-\baselineskip}
+
+% 		% \begin{tikzpicture}
+% 		% 	\clip (0,0) circle (1.62cm);
+% 		% 	\node at (0,0) {
+% 	% \begin{wrapfigure}{r}{0.3\textwidth}
+% 	% 	\vspace{-1em}
+% 		\includegraphics[width=.7\textwidth,right]{pbcut.jpg}
+% 	% \end{wrapfigure}
+
+% 		% 		};
+% 		% \end{tikzpicture}
+
+% \end{minipage}
+
+
+
+
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry%
+		{2024 --- 2026}
+		{M.Sc. in Computer Science and Engineering, Honour's Programme}
+		{DTU. GPA: 11.6/12}
+		{Focus: on Algorithms, Graph Theory, and Discrete Mathematics. I have followed the ``Artificial Intelligence and Algorithms'' specialization.}
+	\entry%
+		{2/2025 --- 6/2025}
+		{Exchange in Vienna}
+		{TU Wien}
+		{I went to Vienna on exchange. It was a highly rewarding experience, where I got to do research in algorithmics with some of the very skilled people from TU Wien. }
+	\entry%
+		{2021 --- 2023}
+		{B.Sc. in Software Engineering}
+		{DTU. GPA: 11.6/12}
+		{Focus: Algorithmics, Data Structures, and Software Development.}
+	\entry%
+		{2019 --- 2021}
+		{Initial years at B.Sc. Quantitative Biology and Disease Modelling}
+		{DTU. GPA: 10.8/12}
+		{Focus: Cell biology and machine learning.}
+	% \entry%
+	% 	{2015 --- 2018}
+	% 	{High School}
+	% 	{Aurehøj Gymnasium}
+	% 	{Specialising in Math, Physics, and Chemistry.}
+	% \entry%
+	% 	{2014 --- 2015}
+	% 	{Efterskole}
+	% 	{Ollerup Efterskole}
+	% 	{Attended tenth grade at Ollerup Efterskole with a focus on piano, choir, and music theory.}
+	% \entry%
+	% 	{2004 --- 2014}
+	% 	{Primary and Secondary School}
+	% 	{Maglegårdsskolen}
+	% 	{Went to the same primary and secondary school in Hellerup for 10 years.}
+\end{entrylist}
+
+
+\cvsect{Publications}
+
+\begin{entrylist}
+	\entry%
+		{Spring 2026}
+		{Fair Correlation Clustering Meets Graph Parameters}
+		{LATIN 2026}
+		{Achieving FPT and XP results on the Fair Correlation Clustering problem, when parameterizing by graph parameters. Research initiated while on exchange in Vienna in spring 2025.}
+\end{entrylist}
+
+
+\cvsect{Relevant Courses and Projects}
+% \\
+% The descriptions are (partly) taken from DTU's course base \href{https://kurser.dtu.dk/search}{[link]} where each DTU course has a short course description and a few are taken from the course page \href{https://tiss.tuwien.ac.at/course/courseList.xhtml?dswid=6870&dsrid=823}{[link]} of TU Wien.  
+% \\
+\begin{entrylist}
+	\entry%
+		{2025 Autumn}
+		{Master's Thesis: Dynamic Graph Drawing}
+		{DTU}
+		{This project tries to review the techniques behind Level Planarity Testing of Level Graphs and to explore a dynamic approach to solving this problem.}
+	\entry%
+		{2025 Spring}
+		{Graph Drawing Algorithms}
+		{TU Wien}
+		{This course teaches common graph drawing criteria and techniques for solving or optimizing the problem of creating a drawing for a graph belonging to common graph classes. The course simultaneously involved participating in a graph drawing contest \href{https://mozart.diei.unipg.it/gdcontest/2025/live/}{[link]} for GD25.}
+	\entry%
+		{2025 Spring}
+		{Advanced Research in Algorithmics}
+		{TU Wien}
+		{Research project resulting in a submission to LATIN 2026.}
+	\entry%
+		{2024 Autumn}{Computational Geometry}{DTU}
+		{This PhD course dives into computational geometry subjects such as convex hulls, triangulations, voronoi diagrams, Frechet distance and more. }
+	\entry%
+        {2024 Autumn} 
+        {Graph Theory 2}
+        {DTU}
+        {The course includes a number of classical results such as the theorems of Tutte, Ramsey, Turan, Kuratowski, Brooks, Dirac, Smith, and Vizing, and also the Jordan Curve Theorem. The course also includes more recent themes, for example list-colorings. }
+	\entry%
+		{2024 Autumn}
+		{Computationally Hard Problems}
+		{DTU}
+		{Studying algorithmic problem classes such as NP, performing problem reductions from known NP-Hard problems, and analyzing randomized algortihms.}
+	\entry%
+		{2024 Spring}
+		{Function Spaces and Mathematical Analysis}
+		{DTU}
+		{Understanding and applying advanced mathematical concepts regarding function spaces, norms, convergence, $L^p$ spaces, Hilbert spaces, Fourier transforms, and more. }
+	\entry%
+        {2023 Autumn} 
+        {Algorithmic Techniques for Modern Data Models}
+        {DTU}
+        {To know, apply, analyze, and design algorithms in modern data models, such as the streaming model, distributed algorithms, and sketches such as distance oracles.}
+	% \entry%
+	% 	{2022 Autumn}
+	% 	{Mathematical Programming Modelling}
+	% 	{DTU}
+	% 	{Understand and formulate operations research problems, such as linear programming and mixed integer programming problems, and implement stochastic programming models.}
+	% \entry%
+    %     {2023 Spring} 
+    %     {Graph Theory 1}
+    %     {DTU}
+    %     {The main aim of this course is to present to the students some basic results and proof techniques in graph theory, in particular in connection with network algorithms. }
+	% \entry%
+    %     {2022 Autumn} 
+    %     {Algorithms and Data Structures 2}
+    %     {DTU}
+    %     {The course provides an understanding of the techniques involved in the construction and analysis of advanced algorithms.}
+	% \entry%
+    %     {2021 Spring} 
+    %     {Algorithms and Data Structures 1}
+    %     {DTU}
+    %     {The course introduces a number of fundamental concepts and techniques for construction and analysis of efficient algorithms and data structures.}
+\end{entrylist}
+
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	EXPERIENCE
 %----------------------------------------------------------------------------------------
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry%
+		{2020--2024\\\footnotesize{part time}}
+		{Teaching Assistant, Advanced Engineering Mathematics 1}
+		{DTU Compute}
+		{I have worked as a TA in Mathematics 1 at DTU for most of my studies (7 semesters). This included supervising and examining a large mathematics project twice. For this work, I got nominated by the students as ``Teaching Assistant of the year 2021''. }
+	\entry%
+		{2020--2024\\\footnotesize{twice a year}}
+		{Organizer of Mathematics Walkthrough Lecture}
+		{DTU}
+		{I have personally arranged and held a biannual walkthrough lecture of the Mathematics 1 course for around 1000 students---something I am very proud of. Recordings here: \href{https://www.youtube.com/@jonathanhjlev3240/videos}{[\faYoutubePlay\ Link]}.}
+	\entry%
+		{9/2024--12/2024\\\footnotesize{part time}}
+		{Teaching Assistant, Algorithms and Data Structures 2}
+		{DTU Compute}
+		{Teaching assistant in the course algorithms and Data Structures 2}
+	\entry%
+		{9/2024--12/2024\\\footnotesize{part time}}
+		{Teaching Assistant, Computer Programming}
+		{DTU Compute}
+		{Teaching assistant in the introductory Python programming course at DTU.}
+	\entry%
+		{2/2023--5/2023\\\footnotesize{part time}}
+		{Teaching Assistant, Introductory Programming}
+		{DTU Compute}
+		{Teaching assistant in an introductory programming course in Java.}
+    \entry%
+		{2/2022--5/2022\\\footnotesize{part time}}
+		{Teaching Assistant, Algorithms and Data Structures 1}
+		{DTU Compute}
+		{Teaching assistant in the course algorithms and Data Structures 1}
+	\entry%
+		{12/2018--12/2021\\\footnotesize{part time}}
+		{Science Communicator}
+		{Experimentarium}
+		{At the science and technology museum, Experimentarium, I worked with guest service and as a science communicator to audiences in all ages. This taught me presentation and teaching skills, as well as first aid and crisis management.}
+	\end{entrylist}
+
 
 %----------------------------------------------------------------------------------------
-%	SKILLS
+%	ADDITIONAL INFORMATION
 %----------------------------------------------------------------------------------------
-\section{Andet}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-KABS hos PF. 2022 & \normalsize{Som Koordinator af Bachelor Studiestarten hos Polyteknisk Forening var jeg ansvarlig for at planlægge og afholde en studiestart for omkring 2500 studerende ved at lede og koordinere omkring 300 frivillige i samarbejde med andre KABS.}\\
-Vektor hos PF. 2020,21  &  \normalsize{Som rusvejleder og tutor, "Vektor", var jeg ansvarlig for at planlægge og afholde en rustur for nye studerende på DTU, samt være personlig vejleder og tutor for 16 nye studerende. }\\  
-Karismatisk lederskab & \normalsize{Jeg har deltaget i dette kursus af Mathias Bruhn, der har givet mig kompetencer indenfor ledelse, menneskelige relationer og karisma.}\\
-"Initiator of the Year" & \normalsize{I 2022 blev jeg tildelt en pris for mit initiativrige frivillige arbejde i studenterforeningen PF. }
-\end{tabularx}
 
-\vfill
-\center{\footnotesize Last updated: \today}
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Languages}
+	
+	\textbf{Danish} --- native\\
+	\textbf{English} --- fluent\\
+	\textbf{French} --- basic understanding\\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Hobbies}
+
+	I love playing around and learning new things. My hobbies include sailing, rope climbing, choir singing, and the collaborative storytelling game of Dungeons \& Dragons.\\
+
+	I love meeting new people, exploring other cultures and languages, and learning new fun facts about the world. 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.3\textwidth}
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Non-profit}
+	
+	As a volunteer in our student union PF at DTU, I have worked with planning the Study Start for approx. 2500 new students by managing and coordinating 300 volunteers in collaborating with a team of other coordinators. For my work on this as well as in areas like our student council and as voluntary TA, I received the ``Initiator of the Year'' award in 2022. 
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
 
 \end{document}
